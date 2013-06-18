@@ -1,0 +1,174 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Form
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+form, .form
+  & label:not(.select)
+    display: inline-block
+    font-size: FONT_SIZE_SMALL
+    line-height: inherit
+    margin: 0.15em 0
+
+  & input:not([type="checkbox"]), textarea, select, .progress, label.select, [data-control-progress]
+    font-size: FONT_SIZE_BIG
+    &.large
+      font-size: FONT_SIZE_LARGE
+
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
+    display: inline-block
+    width: 100%
+    margin: 0.5em 0
+    padding: 0 0.4em
+    transition all 100ms linear
+    font-family: inherit
+    -webkit-appearance: none
+    -webkit-user-select: text
+    -webkit-font-smoothing: antialiased
+    border: 0
+    &:focus
+      outline: none !important
+    &.border
+      &, & > select
+        padding: 0.3em 0.4em
+
+  & textarea
+    min-height: 2.5em
+    line-height: FONT_SIZE_BIG
+
+  & fieldset
+    position: relative
+    padding: 0 0.5em
+
+    & > label:not(.select)
+      float: left
+      width: 20%
+      margin: 0.3em 0
+      line-height: 2.5em
+      &.absolute
+        position: absolute
+      &.anchor
+        width: auto
+        overflow: hidden
+
+    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
+      width: 80% !important
+
+    & .icon
+      position: absolute
+      font-size: FONT_SIZE_BIG
+      top: 0.5em
+      right: 0.6em
+
+    & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea
+      box-shadow none
+      border: none
+      border-radius: 0
+      padding: 0 0.3em
+      &, &:focus
+        background: none
+
+  .indented & fieldset
+    & > label:not(.select):not(.anchor)
+      width: 25% !important
+    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
+      width: 75% !important
+
+  & label.select
+    position: relative
+    display: inline-block
+    font-size: inherit
+    line-height: inherit
+    padding: 0 !important
+    & > select
+      border-radius: 0 !important
+      margin: 0
+      padding: 0 0.4em
+    &:after
+      position: absolute
+      top: 0.15em
+      right: 0.3em
+      content: "▼"
+      pointer-events: none
+      text-align: center
+
+  /* -------------------------- RANGE -------------------------- */
+  & input[type=range]
+    -webkit-appearance: none
+    outline: none
+
+    height: FORM_PROGRESS_HEIGHT
+    width: 100%
+    padding:0
+    border: none
+
+    &::-webkit-slider-thumb
+      position: relative
+      width: SIZE = (FORM_PROGRESS_HEIGHT * 2)
+      height: SIZE
+      -webkit-appearance: none
+      border: none
+
+  /* -------------------------- PROGRESS -------------------------- */
+  & [data-progress]
+    width: 100%
+    & .bar
+      height: FORM_PROGRESS_HEIGHT
+      line-height: FORM_PROGRESS_HEIGHT
+      display: block
+
+      & .value
+        display: block
+        height: inherit
+        width: 0%
+        transition(width TRANSITION_TIME DEFAULT_TRANSITION)
+
+  /* -------------------------- CHECKBOX -------------------------- */
+  & [data-control-checkbox]
+    display: inline-block
+    width: 76px
+    height: FORM_HEIGHT !important
+    position: relative
+    line-height: FORM_HEIGHT !important
+    font-size: inherit
+    &, & label
+      transition all 100ms ease
+
+    input[type=checkbox]
+      visibility: hidden
+
+    &:after, &:before
+      z-index: 0
+      position: absolute
+    &:before
+      content: "ON"
+      left: (FORM_HEIGHT / 2.2)
+      opacity: 0
+    &:after
+      content: "OFF"
+      right: (FORM_HEIGHT / 2.2)
+    &.checked
+      &:before
+        opacity: 1
+        z-index: 1
+      &:after
+        opacity: 0
+        z-index: 0
+
+    & label
+      display: block
+      height: S = (FORM_HEIGHT - 6)
+      width: S
+      cursor: pointer
+      position: absolute
+      top: 3px
+      left: 3px
+      margin: 0px !important
+      z-index: 1
+
+    & input[type=checkbox]:checked + label
+      left: 49px

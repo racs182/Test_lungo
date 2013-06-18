@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="cleartype" content="on">
+	<title>Test lungo</title>
+
+	<!-- Lungo Stylesheet -->
+
+	<link rel="stylesheet" href="css/lungo.css">
+	<link rel="stylesheet" href="css/lungo.icon.css">
+	<link rel="stylesheet" href="css/lungo.icon.brand.css">
+	<link rel="stylesheet" href="css/theme.lungo.css"></head>
+
+<body class="app">
+
+	<!-- Section Main -->
+	<section id="main" data-transition="slide">
+
+		<header data-title="Hola Mundo">
+			<nav class="right">
+				<a href="#main-second" data-router="section" data-icon="right"></a>
+			</nav>
+		</header>
+
+		<footer>
+			<nav>
+				<a href="#main" data-router="article" data-icon="menu" class="active"></a>
+				<a href="#art-1" data-router="article" data-icon="share"></a>
+				<a href="#art-2" data-router="article" data-icon="user"></a>
+				<a href="#art-3" data-router="article" data-icon="users"></a>
+			</nav>
+		</footer>
+
+		<article id="main" class="active">
+			Articulo Main lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, qui, necessitatibus consectetur aperiam odio beatae neque numquam atque voluptate doloribus ea reiciendis nulla asperiores saepe quo dolor nostrum ipsum dolorum.
+		</article>
+		<article id="art-1">
+			Articulo 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, non, ab illum sit perferendis sunt iste doloribus illo molestias quaerat pariatur aliquid nulla saepe nobis modi obcaecati sapiente atque quibusdam?
+		</article>
+		<article id="art-2">
+			Articulo 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, totam, a adipisci voluptatem numquam maiores delectus sunt eveniet eos fugit aspernatur possimus ipsum quod velit provident deleniti error dolorem ea?
+		</article>
+		<article id="art-3">
+			Articulo 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, molestias doloribus quam corrupti suscipit aliquid atque aut animi maxime distinctio dolorem non consequuntur placeat ullam autem voluptatum nihil deserunt provident.
+		</article>
+	</section>
+
+	<!-- Section Second -->
+	<section id="main-second" data-transition="slide">
+		<header data-back="home" data-title="Segunda"></header>
+		<article id="main-second" class="active">
+			<a href="#" data-image="http://placehold.it/350x150"></a>
+		</article>
+
+	</section>
+
+	<!-- Lungo Dependencias -->
+	<script src="js/quo.js"></script>
+	<script src="js/lungo.js"></script>
+
+	<!-- Lungo Sandbox app -->
+	<script>
+        Lungo.init({
+            name: 'example'
+        });
+    </script>
+
+</body>
+</html>
